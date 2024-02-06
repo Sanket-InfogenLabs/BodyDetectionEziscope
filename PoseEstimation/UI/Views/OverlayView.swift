@@ -24,13 +24,14 @@ class OverlayView: UIImageView {
     static let dot = (radius: CGFloat(5), color: UIColor.orange)
     static let line = (width: CGFloat(5.0), color: UIColor.orange)
   }
-    
+    var myArray : [BodyPart] = [.pointV1]
     var newBodyParts:[BodyPart] = [BodyPart.leftShoulder, BodyPart.rightShoulder, BodyPart.leftHip, BodyPart.rightHip]
     
     var leftShoulderPosition: CGPoint?
     var rightShoulderPosition: CGPoint?
     var leftHipPosition: CGPoint?
     var rightHipPosition: CGPoint?
+    var dict : [BodyPart:CGPoint] = [.leftAnkle : CGPoint(x: 0, y: 0)]
     
     var V1 = CGPoint()
     var V2 = CGPoint()
@@ -48,6 +49,12 @@ class OverlayView: UIImageView {
     var Y2 = CGPoint()
     var Y3 = CGPoint()
     var Y4 = CGPoint()
+    
+    
+    var A1 = CGPoint()
+    var A2 = CGPoint()
+    var A3 = CGPoint()
+    var A4 = CGPoint()
     
     var arrayPoints: [CGPoint] = []
 
@@ -127,50 +134,88 @@ class OverlayView: UIImageView {
           var Y = leftSholder.y+CGFloat(hipheight)*0.13
           
           V1 = CGPoint(x:X, y: Y)
+          dict[.pointV1] = V1
+          
+          let tempV1 = V1.x
+          
           X=rightSholder.x-shdwidth*0.62
           Y=leftSholder.y+hipheight*0.11
           V2 = CGPoint(x:X, y: Y)
+          dict[.pointV2] = V2
+          
+          let refDistance = V1.x - V2.x
+          
+          
           X=rightSholder.x-shdwidth*0.79
           Y=leftSholder.y+hipheight*0.24
           V4 = CGPoint(x:X, y: Y)
+          dict[.pointV4] = V4
+          
+          A1 = CGPoint(x:V4.x, y: V4.y + refDistance*0.6)
+          dict[.pointA1] = A1
+          
+          A2 = CGPoint(x:V4.x, y: V4.y - refDistance*0.6)
+          dict[.pointA2] = A2
+          
+          A3 = CGPoint(x:V4.x - refDistance*0.6 , y: V4.y)
+          dict[.pointA3] = A3
+          
+          A4 = CGPoint(x:V4.x + refDistance*0.6 , y: V4.y)
+          dict[.pointA4] = A4
+          
           X=rightSholder.x-shdwidth*0.68
           Y=leftSholder.y+hipheight*0.18
           V3 = CGPoint(x:X, y: Y)
+          dict[.pointV3] = V3
           
-         
           
           X = leftSholder.x+shdwidth*0.15
           Y = rightSholder.y+hipheight*0.073
           B1 = CGPoint(x:X, y: Y)
+          dict[.pointB1] = B1
           
           X = leftSholder.x+shdwidth*0.809
           Y = rightSholder.y+hipheight*0.073
           B2 = CGPoint(x:X, y: Y)
+          dict[.pointB2] = B2
           
           X = leftSholder.x+shdwidth*0.12
           Y = rightSholder.y+hipheight*0.40
           B3 = CGPoint(x:X, y: Y)
+          dict[.pointB3] = B3
           
           X = leftSholder.x+shdwidth*0.92
           Y = rightSholder.y+hipheight*0.40
           B4 = CGPoint(x:X, y: Y)
+          dict[.pointB4] = B4
           
           X = leftSholder.x+shdwidth*0.287
           Y = rightSholder.y+hipheight*0.632
           Y1 = CGPoint(x:X, y: Y)
+          dict[.pointY1] = Y1
           
           X = rightSholder.x-shdwidth*0.287
           Y = rightSholder.y+hipheight*0.632
           Y2 = CGPoint(x:X, y: Y)
+          dict[.pointY2] = Y2
           
           X = leftSholder.x+shdwidth*0.22
           Y = rightSholder.y+hipheight*0.74 
           Y3 = CGPoint(x:X, y: Y)
+          dict[.pointY3] = Y3
           
           X = rightSholder.x-shdwidth*0.22
           Y = rightSholder.y+hipheight*0.74
           Y4 = CGPoint(x:X, y: Y)
-                   
+          dict[.pointY4] = Y4
+          
+          X = rightSholder.x-shdwidth*0.22
+          Y = rightSholder.y+hipheight*0.74
+          Y4 = CGPoint(x:X, y: Y)
+          dict[.pointY4] = Y4
+          
+          
+          
           print("V4",V4)
           print("B1",B1,B2,B3,B4)
           arrayPoints += [V1,V2,V3,V4,B1,B2,B3,B4,Y1,Y2,Y3,Y4]
@@ -230,136 +275,145 @@ class OverlayView: UIImageView {
     var bodyPartToDotMap: [BodyPart: CGPoint] = [:]
       for (index, part) in BodyPart.allCases.enumerated() {
     
-          if newBodyParts.contains(part) {
-              let position = CGPoint(
-                x: person.keyPoints[index].coordinate.x,
-                y: person.keyPoints[index].coordinate.y)
-              bodyPartToDotMap[part] = position
-              strokes.dots.append(position)
-              print("partsss", part)
-          }
-              if part == BodyPart.pointV1 {
-                  
-                  let position = CGPoint(
-                    x: V1.x,
-                    y: V1.y)
-                bodyPartToDotMap[part] = position
-                strokes.dots.append(position)
-              }
-              
-              if part == BodyPart.pointV2 {
-                  
-                  let position = CGPoint(
-                    x: V2.x,
-                    y: V2.y)
-                bodyPartToDotMap[part] = position
-                strokes.dots.append(position)
-  
-              }
-              
-              if part == BodyPart.pointV3 {
-                  
-                  let position = CGPoint(
-                    x: V3.x,
-                    y: V3.y)
-                bodyPartToDotMap[part] = position
-                strokes.dots.append(position)
-  
-              }
-              
-              if part == BodyPart.pointV4 {
-                  
-                  let position = CGPoint(
-                    x: V4.x,
-                    y: V4.y)
-                bodyPartToDotMap[part] = position
-                strokes.dots.append(position)
-  
-              }
-          
-          if part == BodyPart.pointB1 {
-              
-              let position = CGPoint(
-                x: B1.x,
-                y: B1.y)
-            bodyPartToDotMap[part] = position
-            strokes.dots.append(position)
-
+//          if newBodyParts.contains(part) {
+//              let position = CGPoint(
+//                x: person.keyPoints[index].coordinate.x,
+//                y: person.keyPoints[index].coordinate.y)
+//              bodyPartToDotMap[part] = position
+////              strokes.dots.append(position)
+//              print("partsss", part)
+//          }
+         ////
+          for part in myArray{
+//              a(position: CGPoint(x: V1.x,y: V1.y), part: part)
+              appendPoint(position: dict[part]!, part: part)
+//              bodyPartToDotMap[part] = dict[part]!
           }
           
-          if part == BodyPart.pointB2 {
+     
+//              if part == BodyPart.pointV1 {
+//                  a(position: CGPoint(x: V1.x,y: V1.y), part: part)
+//              }
               
-              let position = CGPoint(
-                x: B2.x,
-                y: B2.y)
-            bodyPartToDotMap[part] = position
-            strokes.dots.append(position)
-
-          }
-          
-          if part == BodyPart.pointB4 {
-              
-              let position = CGPoint(
-                x: B3.x,
-                y: B3.y)
-            bodyPartToDotMap[part] = position
-            strokes.dots.append(position)
-
-          }
-          
-          if part == BodyPart.pointB4 {
-              
-              let position = CGPoint(
-                x: B4.x,
-                y: B4.y)
-            bodyPartToDotMap[part] = position
-            strokes.dots.append(position)
-
-          }
-          
-          
-          if part == BodyPart.pointY1 {
-              
-              let position = CGPoint(
-                x: Y1.x,
-                y: Y1.y)
-            bodyPartToDotMap[part] = position
-            strokes.dots.append(position)
-
-          }
-          
-          if part == BodyPart.pointY2 {
-              
-              let position = CGPoint(
-                x: Y2.x,
-                y: Y2.y)
-            bodyPartToDotMap[part] = position
-            strokes.dots.append(position)
-
-          }
-          
-          if part == BodyPart.pointY3 {
-              
-              let position = CGPoint(
-                x: Y3.x,
-                y: Y3.y)
-            bodyPartToDotMap[part] = position
-            strokes.dots.append(position)
-
-          }
-          
-          if part == BodyPart.pointY4 {
-              
-              let position = CGPoint(
-                x: Y4.x,
-                y: Y4.y)
-            bodyPartToDotMap[part] = position
-            strokes.dots.append(position)
-
-          }
+//              if part == BodyPart.pointV2 {
+//                  
+//                  let position = CGPoint(
+//                    x: V2.x,
+//                    y: V2.y)
+//                bodyPartToDotMap[part] = position
+//                strokes.dots.append(position)
+//  
+//              }
+//              
+//              if part == BodyPart.pointV3 {
+//                  
+//                  let position = CGPoint(
+//                    x: V3.x,
+//                    y: V3.y)
+//                bodyPartToDotMap[part] = position
+//                strokes.dots.append(position)
+//  
+//              }
+//              
+//              if part == BodyPart.pointV4 {
+//                  
+//                  let position = CGPoint(
+//                    x: V4.x,
+//                    y: V4.y)
+//                bodyPartToDotMap[part] = position
+//                strokes.dots.append(position)
+//  
+//              }
+//          
+//          if part == BodyPart.pointB1 {
+//              
+//              let position = CGPoint(
+//                x: B1.x,
+//                y: B1.y)
+//            bodyPartToDotMap[part] = position
+//            strokes.dots.append(position)
+//
+//          }
+//          
+//          if part == BodyPart.pointB2 {
+//              
+//              let position = CGPoint(
+//                x: B2.x,
+//                y: B2.y)
+//            bodyPartToDotMap[part] = position
+//            strokes.dots.append(position)
+//
+//          }
+//          
+//          if part == BodyPart.pointB4 {
+//              
+//              let position = CGPoint(
+//                x: B3.x,
+//                y: B3.y)
+//            bodyPartToDotMap[part] = position
+//            strokes.dots.append(position)
+//
+//          }
+//          
+//          if part == BodyPart.pointB4 {
+//              
+//              let position = CGPoint(
+//                x: B4.x,
+//                y: B4.y)
+//            bodyPartToDotMap[part] = position
+//            strokes.dots.append(position)
+//
+//          }
+//          
+//          
+//          if part == BodyPart.pointY1 {
+//              
+//              let position = CGPoint(
+//                x: Y1.x,
+//                y: Y1.y)
+//            bodyPartToDotMap[part] = position
+//            strokes.dots.append(position)
+//
+//          }
+//          
+//          if part == BodyPart.pointY2 {
+//              
+//              let position = CGPoint(
+//                x: Y2.x,
+//                y: Y2.y)
+//            bodyPartToDotMap[part] = position
+//            strokes.dots.append(position)
+//
+//          }
+//          
+//          if part == BodyPart.pointY3 {
+//              
+//              let position = CGPoint(
+//                x: Y3.x,
+//                y: Y3.y)
+//            bodyPartToDotMap[part] = position
+//            strokes.dots.append(position)
+//
+//          }
+//          
+//          if part == BodyPart.pointY4 {
+//              
+//              let position = CGPoint(
+//                x: Y4.x,
+//                y: Y4.y)
+//            bodyPartToDotMap[part] = position
+//            strokes.dots.append(position)
+////
+//          }
 
           
     }
+      
+      func appendPoint(position: CGPoint,part: BodyPart){
+          print("appended")
+//          dict[part] = position
+        strokes.dots.append(position)
+      }
 
 //    do {
 //      try strokes.lines = OverlayView.lines.map { map throws -> Line in

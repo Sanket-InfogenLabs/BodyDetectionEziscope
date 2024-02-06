@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="j8q-GU-t7c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AJu-Xo-lQr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -12,7 +12,7 @@
         <!--Login Page-->
         <scene sceneID="0tB-YT-4vo">
             <objects>
-                <viewController id="IZc-g4-uZw" customClass="LoginPage" customModule="EziScopeUI" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IZc-g4-uZw" customClass="LoginPage" customModule="PoseEstimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OSj-e2-czC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -387,7 +387,7 @@
         <!--Show Me Screen-->
         <scene sceneID="Hjk-nr-5dv">
             <objects>
-                <viewController id="j8q-GU-t7c" userLabel="Show Me Screen" customClass="TexturedFace" customModule="PoseEstimation" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TexturedFace" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j8q-GU-t7c" userLabel="Show Me Screen" customClass="TexturedFace" customModule="PoseEstimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BRJ-PC-yLv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -422,6 +422,9 @@
                                             </backgroundConfiguration>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="generalModeBtn:" destination="j8q-GU-t7c" eventType="touchUpInside" id="hdU-D7-Wbg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDB-d3-6IZ">
                                         <rect key="frame" x="0.0" y="69" width="106" height="34.5"/>
@@ -435,6 +438,9 @@
                                             </backgroundConfiguration>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pulmonaryModeBtn:" destination="j8q-GU-t7c" eventType="touchUpInside" id="eWz-CE-r3t"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckj-fA-Sc2">
                                         <rect key="frame" x="0.0" y="110.5" width="106" height="34.5"/>
@@ -448,6 +454,9 @@
                                             </backgroundConfiguration>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cardiacModeBtn:" destination="j8q-GU-t7c" eventType="touchUpInside" id="7XG-VG-EYI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -486,6 +495,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="trainingModeBtn:" destination="j8q-GU-t7c" eventType="touchUpInside" id="ccb-1r-ksK"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JW4-Ol-nJj"/>
@@ -509,6 +521,7 @@
                             <constraint firstItem="0JY-0L-XRk" firstAttribute="top" secondItem="BRJ-PC-yLv" secondAttribute="top" id="rMs-Am-vNx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="LjR-41-jmt"/>
                     <connections>
                         <outlet property="annotationOverlayview" destination="LEb-Bc-hMz" id="z0X-rW-ZJA"/>
                         <outlet property="sceneview" destination="0JY-0L-XRk" id="BYn-HY-ROV"/>
@@ -516,12 +529,162 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hrw-hP-8H6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5076.9230769230771" y="4.9763033175355451"/>
+            <point key="canvasLocation" x="5986.9565217391309" y="4.6875"/>
+        </scene>
+        <!--Camera Back-->
+        <scene sceneID="oxK-ky-Q2M">
+            <objects>
+                <viewController storyboardIdentifier="ARCameraBack" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bhq-6b-Zxy" customClass="ARCameraBack" customModule="PoseEstimation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E6H-j8-Wjy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pO9-8b-Wsw">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </arView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIh-lg-HZh">
+                                <rect key="frame" x="15" y="797" width="83" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="7Ax-Gx-atd"/>
+                                    <constraint firstAttribute="width" constant="83" id="tlp-j5-3em"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="TRAIN">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                    </backgroundConfiguration>
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="19"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="trainingModeBtn:" destination="j8q-GU-t7c" eventType="touchUpInside" id="5Gg-FC-H0f"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Power Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5H-Uf-qIF">
+                                <rect key="frame" x="317" y="50" width="82" height="18"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="UKx-qX-8qJ">
+                                <rect key="frame" x="15" y="80" width="106" height="145"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sound Modes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jka-ne-syU">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="20.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" red="0.21693782219999999" green="0.21693782219999999" blue="0.21693782219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsP-ho-ziQ">
+                                        <rect key="frame" x="0.0" y="27.5" width="106" height="34.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="106" id="PC5-6M-EEt"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="General">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="generalModeBtn:" destination="j8q-GU-t7c" eventType="touchUpInside" id="S0I-9d-Tjm"/>
+                                            <action selector="generalModeBtn:" destination="bhq-6b-Zxy" eventType="touchUpInside" id="Xaz-En-ixS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEY-uO-reP">
+                                        <rect key="frame" x="0.0" y="69" width="106" height="34.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="106" id="5Z0-zD-auX"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Pulmonary">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pulmonaryModeBtn:" destination="bhq-6b-Zxy" eventType="touchUpInside" id="H1k-SJ-g4L"/>
+                                            <action selector="pulmonaryModeBtn:" destination="j8q-GU-t7c" eventType="touchUpInside" id="HcS-hd-D3V"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OU4-2g-WNT">
+                                        <rect key="frame" x="0.0" y="110.5" width="106" height="34.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="106" id="26A-2o-al1"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Cardiac">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" systemColor="linkColor"/>
+                                            </backgroundConfiguration>
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cardiacModeBtn:" destination="j8q-GU-t7c" eventType="touchUpInside" id="NTG-0W-xgs"/>
+                                            <action selector="cardiacModeBtn:" destination="bhq-6b-Zxy" eventType="touchUpInside" id="a0N-yq-s2h"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w80-he-VSS">
+                                <rect key="frame" x="144" y="786" width="127" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Locate Points"/>
+                                <connections>
+                                    <action selector="locatePoints:" destination="bhq-6b-Zxy" eventType="touchUpInside" id="sDv-Mn-yxC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McC-E2-13L">
+                                <rect key="frame" x="345" y="802" width="64" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="CBF-q6-3gi"/>
+                                    <constraint firstAttribute="height" constant="30" id="PVx-yp-o6j"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Help">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" systemColor="linkColor"/>
+                                    </backgroundConfiguration>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7Oy-kl-ATN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pO9-8b-Wsw" secondAttribute="trailing" id="2ul-Dw-cCK"/>
+                            <constraint firstItem="UKx-qX-8qJ" firstAttribute="top" secondItem="E6H-j8-Wjy" secondAttribute="top" constant="80" id="6Rz-ee-uKH"/>
+                            <constraint firstItem="k5H-Uf-qIF" firstAttribute="trailing" secondItem="E6H-j8-Wjy" secondAttribute="trailingMargin" constant="5" id="DMN-jM-taw"/>
+                            <constraint firstItem="pO9-8b-Wsw" firstAttribute="top" secondItem="E6H-j8-Wjy" secondAttribute="top" id="LFB-69-6az"/>
+                            <constraint firstAttribute="bottom" secondItem="gIh-lg-HZh" secondAttribute="bottom" constant="50" id="Q6G-uO-CJ4"/>
+                            <constraint firstItem="UKx-qX-8qJ" firstAttribute="leading" secondItem="E6H-j8-Wjy" secondAttribute="leading" constant="15" id="QWB-np-z6r"/>
+                            <constraint firstItem="gIh-lg-HZh" firstAttribute="leading" secondItem="E6H-j8-Wjy" secondAttribute="leading" constant="15" id="Zeo-sj-f9I"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="McC-E2-13L" secondAttribute="bottom" constant="30" id="a1d-an-pEs"/>
+                            <constraint firstAttribute="bottom" secondItem="pO9-8b-Wsw" secondAttribute="bottom" id="gzf-YY-NqH"/>
+                            <constraint firstItem="pO9-8b-Wsw" firstAttribute="leading" secondItem="E6H-j8-Wjy" secondAttribute="leading" id="h9z-R3-ehh"/>
+                            <constraint firstItem="k5H-Uf-qIF" firstAttribute="top" secondItem="E6H-j8-Wjy" secondAttribute="topMargin" constant="2" id="pfu-cl-GWY"/>
+                            <constraint firstItem="McC-E2-13L" firstAttribute="trailing" secondItem="E6H-j8-Wjy" secondAttribute="trailingMargin" constant="15" id="udd-vj-EhH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="arView" destination="pO9-8b-Wsw" id="n9o-oC-jgq"/>
+                        <outlet property="locatePointsButton" destination="w80-he-VSS" id="49l-Qy-Giy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p3T-Jv-TAw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6747.826086956522" y="4.6875"/>
         </scene>
         <!--Menu Screen-->
         <scene sceneID="w9h-aD-EaW">
             <objects>
-                <viewController id="S6M-MZ-fAN" userLabel="Menu Screen" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreen" id="S6M-MZ-fAN" userLabel="Menu Screen" customClass="HomeScreen" customModule="PoseEstimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ilk-8E-M2J">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -677,6 +840,9 @@
                                     </backgroundConfiguration>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="showMeActionPop:" destination="S6M-MZ-fAN" eventType="touchUpInside" id="8HL-ff-m3E"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OKA-mW-DZF"/>
@@ -707,10 +873,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d07-Ab-xfJ"/>
+                    <connections>
+                        <outlet property="showMePopUp" destination="uks-aC-P5c" id="RFU-rd-Ho5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T2H-n0-DPN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3007.2463768115945" y="4.6875"/>
+            <point key="canvasLocation" x="3917.3913043478265" y="4.6875"/>
         </scene>
         <!--Live Transmission Screen-->
         <scene sceneID="cJO-nm-7aQ">
@@ -844,7 +1013,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJQ-nQ-14T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3681.1594202898555" y="4.6875"/>
+            <point key="canvasLocation" x="4591.304347826087" y="4.6875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n7C-Y5-Qxg">
@@ -1030,12 +1199,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkI-nq-eEk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4380" y="4.9763033175355451"/>
+            <point key="canvasLocation" x="5289.8550724637689" y="4.6875"/>
         </scene>
         <!--Training Mode Screen-->
         <scene sceneID="2DE-8M-yO3">
             <objects>
-                <viewController id="HI6-Qh-hzY" userLabel="Training Mode Screen" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TrainingModeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HI6-Qh-hzY" userLabel="Training Mode Screen" customClass="TrainingModeController" customModule="PoseEstimation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qkN-M1-GFN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1048,7 +1217,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth direct On" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLT-gB-AiL">
-                                <rect key="frame" x="20" y="51" width="104" height="41"/>
+                                <rect key="frame" x="35" y="51" width="104" height="41"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="IjD-uy-3Ar"/>
@@ -1133,9 +1302,9 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uOS-mD-Ozn"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="JLT-gB-AiL" firstAttribute="leading" secondItem="qkN-M1-GFN" secondAttribute="leadingMargin" id="Lgb-Y0-QUa"/>
+                            <constraint firstItem="JLT-gB-AiL" firstAttribute="leading" secondItem="qkN-M1-GFN" secondAttribute="leadingMargin" constant="15" id="Lgb-Y0-QUa"/>
                             <constraint firstAttribute="bottomMargin" secondItem="fYs-qo-Dyj" secondAttribute="bottom" constant="20" id="MZG-z5-6Tm"/>
                             <constraint firstItem="uOS-mD-Ozn" firstAttribute="trailing" secondItem="CcB-uD-CVh" secondAttribute="trailing" constant="15" id="QGR-1s-QvR"/>
                             <constraint firstItem="oZe-2v-1wr" firstAttribute="top" secondItem="CcB-uD-CVh" secondAttribute="bottom" constant="5" id="YQN-X0-NEW"/>
@@ -1151,7 +1320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zBe-uj-mkq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5790.7692307692305" y="4.9763033175355451"/>
+            <point key="canvasLocation" x="7473.9130434782619" y="-13.392857142857142"/>
         </scene>
         <!--Settings Screen-->
         <scene sceneID="9nm-1z-hL6">
@@ -1277,7 +1446,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QFL-rV-TaA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6523" y="5"/>
+            <point key="canvasLocation" x="8139.130434782609" y="-13.392857142857142"/>
         </scene>
         <!--Subscribe Screen-->
         <scene sceneID="h72-YK-b69">
@@ -1422,7 +1591,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5QQ-3K-icC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7253.8461538461534" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="8855.072463768116" y="-13.392857142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w5Y-Hr-mmV">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AJu-Xo-lQr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="13U-eR-0oT">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="S6M-MZ-fAN" kind="relationship" relationship="rootViewController" id="0gc-dK-pAv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0sO-DW-FwE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3007.2463768115945" y="4.6875"/>
         </scene>
     </scenes>
     <resources>

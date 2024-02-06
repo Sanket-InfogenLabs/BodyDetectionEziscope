@@ -26,6 +26,8 @@ class TexturedFace: UIViewController, ARSessionDelegate, ARSCNViewDelegate{
     
     var count = 0
     var contentNode: SCNNode?
+    var arraypoints:[CGPoint] = []
+    let generalPoints = [""]
 //    var viewcontrollerObj = ViewController()
     @IBOutlet weak var sceneview: ARSCNView!
     
@@ -56,6 +58,8 @@ class TexturedFace: UIViewController, ARSessionDelegate, ARSCNViewDelegate{
     
     var distance = Float()
     var PointsArray: [CGPoint] = []
+    var trainingmodeObj = TrainingModeController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,6 +80,48 @@ class TexturedFace: UIViewController, ARSessionDelegate, ARSCNViewDelegate{
         // "Reset" to run the AR session for the first time.
         resetTracking()
         updateModel()
+    }
+    
+    
+    @IBAction func generalModeBtn(_ sender: Any) {
+       
+        
+        annotationOverlayview.myArray = [.pointV1,.pointV4,.pointV2,.pointV3, .pointA1, .pointA2, .pointA3, .pointA4]
+//
+    }
+    
+    @IBAction func pulmonaryModeBtn(_ sender: Any) {
+        
+        annotationOverlayview.myArray = [.pointB1,.pointB2,.pointB3,.pointB4]
+//
+    }
+    
+    
+    @IBAction func cardiacModeBtn(_ sender: Any) {
+        
+        annotationOverlayview.myArray = [.pointY1,.pointY2,.pointY3,.pointY4]
+    }
+    
+    
+    
+    @IBAction func trainingModeBtn(_ sender: Any) {
+        
+        for subViews in view.subviews {
+            
+            if ((subViews as? UIButton) != nil) {
+                subViews.isHidden = true
+            }
+            
+            if ((subViews as? UIStackView) != nil) {
+                subViews.isHidden = true
+            }
+            
+        }
+        let childVC = TrainingModeController.loadViewController(withStoryBoard: "Main")
+            view.addSubview(childVC.view)
+        
+        annotationOverlayview.myArray = [.pointV1,.pointV4,.pointV2,.pointV3, .pointA1, .pointA2, .pointA3, .pointA4]
+        
     }
     
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
@@ -112,11 +158,12 @@ class TexturedFace: UIViewController, ARSessionDelegate, ARSCNViewDelegate{
     
     func getPointsArray(person: Person) -> [CGPoint] {
         
-        var arraypoints:[CGPoint] = []
+       
         for body in person.keyPoints {
             
-//            if body.bodyPart == BodyPart.rightShoulder {
-                
+            print("Body", body.bodyPart)
+//            if body.bodyPart == BodyPart. {
+           
                 let a = CGPoint(x: body.coordinate.y/1440,y: body.coordinate.x/1080)
                 arraypoints.append(a)
 //            }
@@ -301,7 +348,7 @@ class TexturedFace: UIViewController, ARSessionDelegate, ARSCNViewDelegate{
                     
                     // Visualize the pose estimation result.
                     //                if distance > 0.5 {
-                    if distance > 1.2 {
+                    if distance > 0.2 {
                         self.annotationOverlayview.draw(at: image, person: result)
                     }
                     else {

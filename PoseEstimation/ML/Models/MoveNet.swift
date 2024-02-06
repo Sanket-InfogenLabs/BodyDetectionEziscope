@@ -235,7 +235,7 @@ final class MoveNet: PoseEstimator {
     var positions: [CGFloat] = []
     var totalScoreSum: Float32 = 0
     var keyPoints: [KeyPoint] = []
-      for idx in 0..<BodyPart.allCases.count - 12 {
+      for idx in 0..<BodyPart.allCases.count - 16 {
       let x = ((CGFloat(output[idx * 3 + 1]) * inputWidth) * widthRatio) + minX
       let y = ((CGFloat(output[idx * 3 + 0]) * inputHeight) * heightRatio) + minY
       positions.append(x)

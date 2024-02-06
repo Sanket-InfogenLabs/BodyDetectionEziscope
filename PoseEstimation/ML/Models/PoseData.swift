@@ -46,7 +46,7 @@ enum BodyPart: String, CaseIterable {
   case leftAnkle = "left ankle"
   case rightAnkle = "right ankle"
 
-    
+
   case pointV1 = "pointV1"
   case pointV2 = "pointV2"
   case pointV3 = "pointV3"
@@ -63,6 +63,13 @@ enum BodyPart: String, CaseIterable {
   case pointY2 = "pointY2"
   case pointY3 = "pointY3"
   case pointY4 = "pointY4"
+    
+    
+   case pointA1 = "pointA1"
+   case pointA2 = "pointA2"
+   case pointA3 = "pointA3"
+   case pointA4 = "pointA4"
+      
     
     
   /// Get the index of the body part in the array returned by pose estimation models.
