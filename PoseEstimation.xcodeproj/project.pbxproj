@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,6 +26,19 @@
 		146FD5322B70B7E3009483B9 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FD5312B70B7E3009483B9 /* Extension.swift */; };
 		146FD5362B70E9EF009483B9 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FD5352B70E9EF009483B9 /* HomeScreen.swift */; };
 		148837B42B678E0000F23476 /* ARCameraFront.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148837B32B678E0000F23476 /* ARCameraFront.swift */; };
+		18BE6C972B73BDEA0091C621 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6C8E2B73BDEA0091C621 /* Message.swift */; };
+		18BE6C982B73BDEA0091C621 /* SessionDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6C8F2B73BDEA0091C621 /* SessionDescription.swift */; };
+		18BE6C992B73BDEA0091C621 /* WebSocketProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6C912B73BDEA0091C621 /* WebSocketProvider.swift */; };
+		18BE6C9A2B73BDEA0091C621 /* NativeWebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6C922B73BDEA0091C621 /* NativeWebSocket.swift */; };
+		18BE6C9B2B73BDEA0091C621 /* StarscreamProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6C932B73BDEA0091C621 /* StarscreamProvider.swift */; };
+		18BE6C9C2B73BDEA0091C621 /* IceCandidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6C942B73BDEA0091C621 /* IceCandidate.swift */; };
+		18BE6C9D2B73BDEA0091C621 /* WebRTCClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6C952B73BDEA0091C621 /* WebRTCClient.swift */; };
+		18BE6C9E2B73BDEA0091C621 /* SignalingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6C962B73BDEA0091C621 /* SignalingClient.swift */; };
+		18BE6CA12B73BDF70091C621 /* DataFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6CA02B73BDF70091C621 /* DataFile.swift */; };
+		18BE6CA42B73BE670091C621 /* WebRTC in Frameworks */ = {isa = PBXBuildFile; productRef = 18BE6CA32B73BE670091C621 /* WebRTC */; };
+		18BE6CA62B73BF620091C621 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6CA52B73BF620091C621 /* Config.swift */; };
+		18BE6CA92B73C0110091C621 /* Starscream in Frameworks */ = {isa = PBXBuildFile; productRef = 18BE6CA82B73C0110091C621 /* Starscream */; };
+		18BE6CAB2B73C9E70091C621 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BE6CAA2B73C9E70091C621 /* LoginViewController.swift */; };
 		33CECB32BE623AB8D720B3EA /* Pods_PoseEstimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A08F93117A75BFCA9BB9C0F /* Pods_PoseEstimation.framework */; };
 		7FB1192B26EA499500B86E0A /* PoseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1192926EA499500B86E0A /* PoseData.swift */; };
 		7FB1192C26EA499500B86E0A /* PoseConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB1192A26EA499500B86E0A /* PoseConfig.swift */; };
@@ -53,6 +66,17 @@
 		146FD5312B70B7E3009483B9 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		146FD5352B70E9EF009483B9 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		148837B32B678E0000F23476 /* ARCameraFront.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCameraFront.swift; sourceTree = "<group>"; };
+		18BE6C8E2B73BDEA0091C621 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		18BE6C8F2B73BDEA0091C621 /* SessionDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDescription.swift; sourceTree = "<group>"; };
+		18BE6C912B73BDEA0091C621 /* WebSocketProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketProvider.swift; sourceTree = "<group>"; };
+		18BE6C922B73BDEA0091C621 /* NativeWebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NativeWebSocket.swift; sourceTree = "<group>"; };
+		18BE6C932B73BDEA0091C621 /* StarscreamProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarscreamProvider.swift; sourceTree = "<group>"; };
+		18BE6C942B73BDEA0091C621 /* IceCandidate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCandidate.swift; sourceTree = "<group>"; };
+		18BE6C952B73BDEA0091C621 /* WebRTCClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebRTCClient.swift; sourceTree = "<group>"; };
+		18BE6C962B73BDEA0091C621 /* SignalingClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalingClient.swift; sourceTree = "<group>"; };
+		18BE6CA02B73BDF70091C621 /* DataFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataFile.swift; sourceTree = "<group>"; };
+		18BE6CA52B73BF620091C621 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		18BE6CAA2B73C9E70091C621 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		515FF91A588EB715C5E320A7 /* Pods-PoseEstimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoseEstimation.release.xcconfig"; path = "Target Support Files/Pods-PoseEstimation/Pods-PoseEstimation.release.xcconfig"; sourceTree = "<group>"; };
 		737F4A896F2232015436950C /* Pods-PoseEstimation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoseEstimation.debug.xcconfig"; path = "Target Support Files/Pods-PoseEstimation/Pods-PoseEstimation.debug.xcconfig"; sourceTree = "<group>"; };
 		7FB1192926EA499500B86E0A /* PoseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoseData.swift; sourceTree = "<group>"; };
@@ -68,6 +92,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				33CECB32BE623AB8D720B3EA /* Pods_PoseEstimation.framework in Frameworks */,
+				18BE6CA42B73BE670091C621 /* WebRTC in Frameworks */,
+				18BE6CA92B73C0110091C621 /* Starscream in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +103,8 @@
 		0F1854C926A95F48004780E1 /* PoseEstimation */ = {
 			isa = PBXGroup;
 			children = (
+				18BE6C9F2B73BDF70091C621 /* Data */,
+				18BE6C8D2B73BDEA0091C621 /* Services */,
 				0F1854E326A95F48004780E1 /* AppDelegate.swift */,
 				0F1854D726A95F48004780E1 /* Assets.xcassets */,
 				0F1854D026A95F48004780E1 /* Camera */,
@@ -120,6 +148,7 @@
 		0F1854DD26A95F48004780E1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				18BE6CAA2B73C9E70091C621 /* LoginViewController.swift */,
 				0F1854DE26A95F48004780E1 /* ViewController.swift */,
 				146FD52A2B6D0307009483B9 /* TrainingModeController.swift */,
 				146FD5352B70E9EF009483B9 /* HomeScreen.swift */,
@@ -153,6 +182,38 @@
 				146FD5312B70B7E3009483B9 /* Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		18BE6C8D2B73BDEA0091C621 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				18BE6CA52B73BF620091C621 /* Config.swift */,
+				18BE6C8E2B73BDEA0091C621 /* Message.swift */,
+				18BE6C8F2B73BDEA0091C621 /* SessionDescription.swift */,
+				18BE6C902B73BDEA0091C621 /* WebSocketProvider */,
+				18BE6C942B73BDEA0091C621 /* IceCandidate.swift */,
+				18BE6C952B73BDEA0091C621 /* WebRTCClient.swift */,
+				18BE6C962B73BDEA0091C621 /* SignalingClient.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		18BE6C902B73BDEA0091C621 /* WebSocketProvider */ = {
+			isa = PBXGroup;
+			children = (
+				18BE6C912B73BDEA0091C621 /* WebSocketProvider.swift */,
+				18BE6C922B73BDEA0091C621 /* NativeWebSocket.swift */,
+				18BE6C932B73BDEA0091C621 /* StarscreamProvider.swift */,
+			);
+			path = WebSocketProvider;
+			sourceTree = "<group>";
+		};
+		18BE6C9F2B73BDF70091C621 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				18BE6CA02B73BDF70091C621 /* DataFile.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		7F0CE7FC26DF69E500CC7BC7 /* UI */ = {
@@ -229,6 +290,10 @@
 			dependencies = (
 			);
 			name = PoseEstimation;
+			packageProductDependencies = (
+				18BE6CA32B73BE670091C621 /* WebRTC */,
+				18BE6CA82B73C0110091C621 /* Starscream */,
+			);
 			productName = PoseNet;
 			productReference = 84B67CEB2326338300A11A08 /* PoseEstimation.app */;
 			productType = "com.apple.product-type.application";
@@ -257,6 +322,10 @@
 				Base,
 			);
 			mainGroup = 84B67CE22326338300A11A08;
+			packageReferences = (
+				18BE6CA22B73BE670091C621 /* XCRemoteSwiftPackageReference "WebRTC" */,
+				18BE6CA72B73C0110091C621 /* XCRemoteSwiftPackageReference "Starscream" */,
+			);
 			productRefGroup = 84B67CEC2326338300A11A08 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -329,21 +398,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FB1192B26EA499500B86E0A /* PoseData.swift in Sources */,
+				18BE6C9D2B73BDEA0091C621 /* WebRTCClient.swift in Sources */,
 				0F1854F826A95F48004780E1 /* AppDelegate.swift in Sources */,
 				0F1854EE26A95F48004780E1 /* PoseEstimator.swift in Sources */,
 				0F1854F226A95F48004780E1 /* CVPixelBuffer+TFLite.swift in Sources */,
+				18BE6CAB2B73C9E70091C621 /* LoginViewController.swift in Sources */,
+				18BE6C9A2B73BDEA0091C621 /* NativeWebSocket.swift in Sources */,
 				0F1854F026A95F48004780E1 /* CGSize+TFLite.swift in Sources */,
 				0F1854F426A95F48004780E1 /* ViewController.swift in Sources */,
 				0F1854EB26A95F48004780E1 /* CameraFeedManager.swift in Sources */,
+				18BE6C972B73BDEA0091C621 /* Message.swift in Sources */,
 				148837B42B678E0000F23476 /* ARCameraFront.swift in Sources */,
 				146FD52B2B6D0307009483B9 /* TrainingModeController.swift in Sources */,
+				18BE6CA12B73BDF70091C621 /* DataFile.swift in Sources */,
+				18BE6C9C2B73BDEA0091C621 /* IceCandidate.swift in Sources */,
 				0F1854ED26A95F48004780E1 /* PoseNet.swift in Sources */,
 				146FD5322B70B7E3009483B9 /* Extension.swift in Sources */,
 				146FD52F2B70B57A009483B9 /* ARCameraBack.swift in Sources */,
+				18BE6CA62B73BF620091C621 /* Config.swift in Sources */,
 				7FB1192C26EA499500B86E0A /* PoseConfig.swift in Sources */,
+				18BE6C9E2B73BDEA0091C621 /* SignalingClient.swift in Sources */,
 				0F1854F926A95F48004780E1 /* OverlayView.swift in Sources */,
+				18BE6C982B73BDEA0091C621 /* SessionDescription.swift in Sources */,
 				146FD5362B70E9EF009483B9 /* HomeScreen.swift in Sources */,
+				18BE6C992B73BDEA0091C621 /* WebSocketProvider.swift in Sources */,
 				0F1854F326A95F48004780E1 /* Data+TFLite.swift in Sources */,
+				18BE6C9B2B73BDEA0091C621 /* StarscreamProvider.swift in Sources */,
 				146CC52B2B6A19EC009BE7F3 /* BufferExtension.swift in Sources */,
 				0F1854EC26A95F48004780E1 /* MoveNet.swift in Sources */,
 			);
@@ -555,6 +635,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		18BE6CA22B73BE670091C621 /* XCRemoteSwiftPackageReference "WebRTC" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stasel/WebRTC.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 121.0.0;
+			};
+		};
+		18BE6CA72B73C0110091C621 /* XCRemoteSwiftPackageReference "Starscream" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/daltoniam/Starscream.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		18BE6CA32B73BE670091C621 /* WebRTC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18BE6CA22B73BE670091C621 /* XCRemoteSwiftPackageReference "WebRTC" */;
+			productName = WebRTC;
+		};
+		18BE6CA82B73C0110091C621 /* Starscream */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 18BE6CA72B73C0110091C621 /* XCRemoteSwiftPackageReference "Starscream" */;
+			productName = Starscream;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 84B67CE32326338300A11A08 /* Project object */;
 }
