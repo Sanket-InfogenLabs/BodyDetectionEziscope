@@ -16,6 +16,7 @@ class ARCameraBack: UIViewController, ARSessionDelegate {
    
     @IBOutlet weak var locatePointsButton: UIButton!
     
+    var lidarPresent = false
     private lazy var annotationOverlayView: UIView = {
       precondition(isViewLoaded)
       let annotationOverlayView = UIView(frame: .zero)
@@ -105,9 +106,23 @@ class ARCameraBack: UIViewController, ARSessionDelegate {
         arView.session.run(configuration)
         arView.scene.addAnchor(anchorEntity)
         // Do any additional setup after loading the view.
+        let supportLiDAR = ARWorldTrackingConfiguration.supportsSceneReconstruction(.mesh)
+        if supportLiDAR {
+            lidarPresent = true
+        }
+
+//        DispatchQueue.main.async {
+//            self.hideLoader()
+//        }
+         
+      
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
+   
     func cropImage(image: UIImage) -> UIImage? {
         let originalSize = image.size
         let cropRect = CGRect(x: 180, y: 0, width: originalSize.width - 360, height: originalSize.height)
@@ -125,6 +140,10 @@ class ARCameraBack: UIViewController, ARSessionDelegate {
     
 
     func addNewPoint(point:CGPoint,node:inout ModelEntity) {
+        
+        if lidarPresent == false {
+            return
+        }
         
         let avPoint = CGPoint(x: CGFloat(point.x), y: CGFloat(point.y)).convertVisionToAVFoundation()
 
@@ -219,8 +238,8 @@ class ARCameraBack: UIViewController, ARSessionDelegate {
            let rightelbow = detectedBody.skeleton.landmark(for: ARSkeleton.JointName(rawValue:"right_forearm_joint"))
            let leftelbow = detectedBody.skeleton.landmark(for: ARSkeleton.JointName(rawValue:"left_forearm_joint"))
            let newpoint = simd_float2(leftshoulder!.x+distance(leftshoulder!,leftelbow!),leftshoulder!.y)
-           var arrayOfJoints:[simd_float2] = [righthip!,lefthip!,rightshoulder!,leftshoulder!,newpoint,rightelbow!,leftelbow!]
-            
+//           var arrayOfJoints:[simd_float2] = [righthip!,lefthip!,rightshoulder!,leftshoulder!,newpoint,rightelbow!,leftelbow!]
+           var arrayOfJoints:[simd_float2] = []
 //
             let point1=simd_float2(detectedBody.skeleton.landmark(for: ARSkeleton.JointName(rawValue:"right_shoulder_1_joint"))!.y,detectedBody.skeleton.landmark(for: ARSkeleton.JointName(rawValue:"right_shoulder_1_joint"))!.x)
             let point2=simd_float2(detectedBody.skeleton.landmark(for: ARSkeleton.JointName(rawValue:"left_shoulder_1_joint"))!.y,detectedBody.skeleton.landmark(for: ARSkeleton.JointName(rawValue:"left_shoulder_1_joint"))!.x)
@@ -283,6 +302,8 @@ class ARCameraBack: UIViewController, ARSessionDelegate {
                 addNewPoint(point: CGPoint(x: CGFloat(V2.x), y: CGFloat(V2.y)), node: &sphere6)
                 addNewPoint(point: CGPoint(x: CGFloat(V3.x), y: CGFloat(V3.y)), node: &sphere7)
                 addNewPoint(point: CGPoint(x: CGFloat(V4.x), y: CGFloat(V4.y)), node: &sphere8)
+                
+                arrayOfJoints += [V1,V2,V3,V4]
             }
             
             else if cardiacMode {
@@ -301,6 +322,8 @@ class ARCameraBack: UIViewController, ARSessionDelegate {
                 addNewPoint(point: CGPoint(x: CGFloat(B3.x), y: CGFloat(B3.y)), node: &sphere3)
                 addNewPoint(point: CGPoint(x: CGFloat(B4.x), y: CGFloat(B4.y)), node: &sphere4)
                 
+                arrayOfJoints += [B1,B2,B3,B4]
+                
             }
             
             else if pulmonaryMode {
@@ -318,6 +341,7 @@ class ARCameraBack: UIViewController, ARSessionDelegate {
                 addNewPoint(point: CGPoint(x: CGFloat(Y2.x), y: CGFloat(Y2.y)), node: &sphere10)
                 addNewPoint(point: CGPoint(x: CGFloat(Y3.x), y: CGFloat(Y3.y)), node: &sphere11)
                 addNewPoint(point: CGPoint(x: CGFloat(Y4.x), y: CGFloat(Y4.y)), node: &sphere12)
+                arrayOfJoints += [Y1,Y2,Y3,Y4]
             }
                
             
@@ -363,8 +387,9 @@ class ARCameraBack: UIViewController, ARSessionDelegate {
 
                 pointsPath.addArc(withCenter: normalizedCenter, radius: 5, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
 //
-                annotationOverlayView.layer.addSublayer(circleLayer)
-
+              if lidarPresent == false {
+                  annotationOverlayView.layer.addSublayer(circleLayer)
+              }
 
                   }
             arView.addSubview(annotationOverlayView)
@@ -399,3 +424,4 @@ class ARCameraBack: UIViewController, ARSessionDelegate {
     }
     
 }
+

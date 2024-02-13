@@ -7,207 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A311A6BA-40C9-4DAE-88BB-D11372B1D518"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PoseEstimation/Camera/ARCameraBack.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
-            landmarkName = "session(_:didUpdate:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A311A6BA-40C9-4DAE-88BB-D11372B1D518 - f84bd0a579992887"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoseEstimation.ARCameraBack.session(_: __C.ARSession, didUpdate: __C.ARFrame) -&gt; ()"
-                  moduleName = "PoseEstimation"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sanketlothe/BodyDetectionEziscope/PoseEstimation/Camera/ARCameraBack.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "272"
-                  endingLineNumber = "272"
-                  offsetFromSymbolStart = "74880">
-               </Location>
-               <Location
-                  uuid = "A311A6BA-40C9-4DAE-88BB-D11372B1D518 - f84bd0a579992887"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoseEstimation.ARCameraBack.session(_: __C.ARSession, didUpdate: __C.ARFrame) -&gt; ()"
-                  moduleName = "PoseEstimation"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sanketlothe/BodyDetectionEziscope/PoseEstimation/Camera/ARCameraBack.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "272"
-                  endingLineNumber = "272"
-                  offsetFromSymbolStart = "74948">
-               </Location>
-               <Location
-                  uuid = "A311A6BA-40C9-4DAE-88BB-D11372B1D518 - f84bd0a579992887"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoseEstimation.ARCameraBack.session(_: __C.ARSession, didUpdate: __C.ARFrame) -&gt; ()"
-                  moduleName = "PoseEstimation"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sanketlothe/BodyDetectionEziscope/PoseEstimation/Camera/ARCameraBack.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "272"
-                  endingLineNumber = "272"
-                  offsetFromSymbolStart = "74488">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "C2EDC26C-DB99-49ED-B982-53550CCA7778"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PoseEstimation/Camera/ARCameraBack.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
-            landmarkName = "session(_:didUpdate:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C2EDC26C-DB99-49ED-B982-53550CCA7778 - f84bd0a579992ab6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoseEstimation.ARCameraBack.session(_: __C.ARSession, didUpdate: __C.ARFrame) -&gt; ()"
-                  moduleName = "PoseEstimation"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sanketlothe/BodyDetectionEziscope/PoseEstimation/Camera/ARCameraBack.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "289"
-                  endingLineNumber = "289"
-                  offsetFromSymbolStart = "84240">
-               </Location>
-               <Location
-                  uuid = "C2EDC26C-DB99-49ED-B982-53550CCA7778 - f84bd0a579992ab6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoseEstimation.ARCameraBack.session(_: __C.ARSession, didUpdate: __C.ARFrame) -&gt; ()"
-                  moduleName = "PoseEstimation"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sanketlothe/BodyDetectionEziscope/PoseEstimation/Camera/ARCameraBack.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "289"
-                  endingLineNumber = "289"
-                  offsetFromSymbolStart = "84348">
-               </Location>
-               <Location
-                  uuid = "C2EDC26C-DB99-49ED-B982-53550CCA7778 - f84bd0a579992ad1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PoseEstimation.ARCameraBack.session(_: __C.ARSession, didUpdate: __C.ARFrame) -&gt; ()"
-                  moduleName = "PoseEstimation"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sanketlothe/BodyDetectionEziscope/PoseEstimation/Camera/ARCameraBack.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "290"
-                  endingLineNumber = "290"
-                  offsetFromSymbolStart = "83368">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B97D6B0F-1116-4646-986D-883A381CA0CE"
+            uuid = "036C15F5-691F-427F-94E7-677D8EF8A436"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PoseEstimation/UI/ViewControllers/HomeScreen.swift"
+            filePath = "PoseEstimation/Controller/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "showMeActionPop(_:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "LoginAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "23DB9E27-3915-4A33-B183-404CEE056DF6"
+            uuid = "9C7E6F8A-EA13-47B3-868E-4AF2CFC111F8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PoseEstimation/UI/ViewControllers/HomeScreen.swift"
+            filePath = "PoseEstimation/Controller/LoginViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "showMeActionPop(_:)"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "LoginAction(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A7B8CF99-FB18-4D3E-9D2F-0A7DB32129C0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PoseEstimation/UI/ViewControllers/HomeScreen.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "showMeActionPop(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "07660940-EFFB-4DFF-A7AE-E3861CE65FA5"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PoseEstimation/UI/ViewControllers/HomeScreen.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "showMeActionPop(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ABF032AF-5C4F-4C48-AEEF-0E38BBC1AC50"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PoseEstimation/Camera/ARCameraFront.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "TexturedFace"
-            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

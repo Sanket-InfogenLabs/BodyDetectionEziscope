@@ -227,4 +227,108 @@ extension UIViewController{
             let controller = sb.instantiateViewController(withIdentifier: String(describing: self)) as! T
             return controller
         }
+    
+
+    class LoadingViewController: UIViewController {
+        private let loadingIndicator = UIActivityIndicatorView(style: .large)
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+
+            view.backgroundColor = UIColor(white: 0, alpha: 0.5)
+
+            loadingIndicator.color = UIColor(white: 1, alpha: 0.5)
+            loadingIndicator.center = view.center
+            loadingIndicator.startAnimating()
+            loadingIndicator.backgroundColor = UIColor(white: 0.2, alpha: 1)
+            loadingIndicator.layer.cornerRadius = 8.0
+            loadingIndicator.frame = CGRect(x: UIScreen.main.bounds.width * 0.5 - 30, y: UIScreen.main.bounds.height * 0.5 - 30, width: 60, height: 60)
+            navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+
+            view.addSubview(loadingIndicator)
+        }
+    }
+  
+    func hideLoader() {
+            if let loadingViewController = presentedViewController as? LoadingViewController {
+                loadingViewController.view.isHidden = true
+                loadingViewController.dismiss(animated: true, completion: nil)
+            }
+            view.isUserInteractionEnabled = true
+        }
+
+
+    func showLoader() {
+            if let existingLoader = presentedViewController as? LoadingViewController {
+                existingLoader.view.isHidden = false
+            }
+            else {
+                let loadingViewController = LoadingViewController()
+                loadingViewController.modalPresentationStyle = .overFullScreen
+                loadingViewController.modalTransitionStyle = .crossDissolve
+                present(loadingViewController, animated: true, completion: nil)
+            }
+            view.isUserInteractionEnabled = false
+        }
+    
+}
+
+
+extension UIImage {
+    
+    
+    func rotate(radians: Float) -> UIImage? {
+        
+        var newSize = CGRect(origin: CGPoint.zero, size: self.size).applying(CGAffineTransform(rotationAngle: CGFloat(radians))).size
+        
+        // Trim off the extremely small float value to prevent core graphics from rounding it up
+        
+        newSize.width = floor(newSize.width)
+        
+        newSize.height = floor(newSize.height)
+        
+        UIGraphicsBeginImageContextWithOptions(newSize, false, self.scale)
+        
+        let context = UIGraphicsGetCurrentContext()!
+        
+        // Move origin to middle
+        
+        
+        
+        context.translateBy(x: newSize.width/2, y: newSize.height/2)
+        
+        // Rotate around middle
+        
+        context.rotate(by: CGFloat(radians))
+        
+        
+        
+        // Draw the image at its center
+        
+        
+        
+        self.draw(in: CGRect(x: -self.size.width/2, y: -self.size.height/2, width: self.size.width, height: self.size.height))
+        
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        
+        return newImage
+        
+        
+        
+    }
+    
+}
+   
+extension String {
+    
+    var isValidEmail: Bool {
+            return NSPredicate(format: "SELF MATCHES %@", "[A-Z0-9a-z]+([._%+-]{1}[A-Z0-9a-z]+)*@[A-Za-z0-9-]+((\\.[A-Za-z][A-Za-z0-9]{1,3})+)*\\.([A-Za-z]{2,4})").evaluate(with: self)
+        }
+
+        var isValidPassword: Bool {
+            return NSPredicate(format: "SELF MATCHES %@", "^(?=.*?[A-Z])(?=(.*[a-z]){1,})(?=(.*[\\d]){1,})(?=(.*[\\W]){1,})(?!.*\\s).{8,}$").evaluate(with: self)
+        }
 }

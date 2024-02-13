@@ -86,7 +86,7 @@ class TexturedFace: UIViewController, ARSessionDelegate, ARSCNViewDelegate{
     @IBAction func generalModeBtn(_ sender: Any) {
        
         
-        annotationOverlayview.myArray = [.pointV1,.pointV4,.pointV2,.pointV3, .pointA1, .pointA2, .pointA3, .pointA4]
+        annotationOverlayview.myArray = [.pointV1,.pointV4,.pointV2,.pointV3]
 //
     }
     
@@ -192,9 +192,9 @@ class TexturedFace: UIViewController, ARSessionDelegate, ARSCNViewDelegate{
         guard let sceneview = renderer as? ARSCNView,
             anchor is ARFaceAnchor else { return nil }
         
-        #if targetEnvironment(simulator)
-        #error("ARKit is not supported in iOS Simulator. Connect a physical iOS device and select it as your Xcode run destination, or select Generic iOS Device as a build-only destination.")
-        #else
+//        #if targetEnvironment(simulator)
+//        #error("ARKit is not supported in iOS Simulator. Connect a physical iOS device and select it as your Xcode run destination, or select Generic iOS Device as a build-only destination.")
+//        #else
         let faceGeometry = ARSCNFaceGeometry(device: sceneview.device!)!
         let material = faceGeometry.firstMaterial!
         
@@ -202,7 +202,7 @@ class TexturedFace: UIViewController, ARSessionDelegate, ARSCNViewDelegate{
 //        material.lightingModel = .physicallyBased
         
         contentNode = SCNNode(geometry: faceGeometry)
-        #endif
+//        #endif
         return contentNode
     }
     
@@ -363,66 +363,10 @@ class TexturedFace: UIViewController, ARSessionDelegate, ARSCNViewDelegate{
         return arrOfPoints
     }
 
-    enum Constants {
-      // Configs for the TFLite interpreter.
-      static let defaultThreadCount = 4
-      static let defaultDelegate: Delegates = .gpu
-      static let defaultModelType: ModelType = .movenetThunder
-
-      // Minimum score to render the result.
-      static let minimumScore: Float32 = 0.2
-    }
-}
-
-extension UIImage {
-    
-
-    func rotate(radians: Float) -> UIImage? {
-
-        var newSize = CGRect(origin: CGPoint.zero, size: self.size).applying(CGAffineTransform(rotationAngle: CGFloat(radians))).size
-
-        // Trim off the extremely small float value to prevent core graphics from rounding it up
-
-        newSize.width = floor(newSize.width)
-
-        newSize.height = floor(newSize.height)
-
-        UIGraphicsBeginImageContextWithOptions(newSize, false, self.scale)
-
-        let context = UIGraphicsGetCurrentContext()!
-
-        // Move origin to middle
-        
-        
-        
-        context.translateBy(x: newSize.width/2, y: newSize.height/2)
-
-        // Rotate around middle
-
-        context.rotate(by: CGFloat(radians))
-        
-        
-        
-        // Draw the image at its center
-        
-        
-        
-        self.draw(in: CGRect(x: -self.size.width/2, y: -self.size.height/2, width: self.size.width, height: self.size.height))
-
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-
-        UIGraphicsEndImageContext()
-        
-        
-        return newImage
-        
-        
-        
-    }
-    
-    
     
 }
+
+    
 
 
 

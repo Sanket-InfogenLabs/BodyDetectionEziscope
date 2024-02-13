@@ -9,9 +9,11 @@
 import UIKit
 import AVFoundation
 import WebRTC
-
+let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
 class HomeScreenViewController: UIViewController {
 
+    
+    static var sharedInstance: HomeScreenViewController?
     private let config = Config.default
     private var signalClient: SignalingClient!
     private var webRTCClient: WebRTCClient!
@@ -45,7 +47,7 @@ class HomeScreenViewController: UIViewController {
         self.webRTCClient.delegate = self
         self.signalClient.delegate = self
         self.signalClient.connect()
-
+        HomeScreenViewController.sharedInstance = self
         // Do any additional setup after loading the view.
     }
     
@@ -63,6 +65,26 @@ class HomeScreenViewController: UIViewController {
         sendData()
 
     }
+    
+    @IBAction func optionsBtn(_ sender: Any) {
+        
+        let helpView = PopUPView()
+        view.addSubview(helpView)
+        helpView.alpha = 0
+        helpView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            helpView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            helpView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            helpView.topAnchor.constraint(equalTo: view.topAnchor),
+            helpView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+        ])
+
+        UIView.animate(withDuration: 0.2) {
+            helpView.alpha = 1.0
+        }
+        
+    }
+    
     private func buildSignalingClient() -> SignalingClient {
         
         // iOS 13 has native websocket support. For iOS 12 or lower we will use 3rd party library.
@@ -105,7 +127,44 @@ class HomeScreenViewController: UIViewController {
             self.signalClient.send(sdp: sdp)
         }
     }
-    @IBAction func showMeActionPop(_ sender: Any) {
+//    @IBAction func showMeActionPop(_ sender: Any) {
+//        
+//        let alertController = UIAlertController(
+//                                    title: "Choose Camera",
+//                                    message: "Use Front Camera if you using the app alone",
+//                                    preferredStyle: .alert)
+//
+//            // Handling OK action
+//            let okAction = UIAlertAction(title: "Front", style: .default) { (action:UIAlertAction!) in
+//                
+//                let childVC =  TexturedFace.loadViewController(withStoryBoard: "Main")
+//                self.navigationController?.pushViewController(childVC, animated: true)
+//                          
+//            }
+//
+//            // Handling Cancel action
+//            let cancelAction = UIAlertAction(title: "Back", style: .default) { (action:UIAlertAction!) in
+//                let childVC =  ARCameraBack.loadViewController(withStoryBoard: "Main")
+//                self.navigationController?.pushViewController(childVC, animated: true)
+//                          
+//            }
+//
+//            // Adding action buttons to the alert controller
+//            alertController.addAction(okAction)
+//            alertController.addAction(cancelAction)
+//
+//            // Presenting alert controller
+//            self.present(alertController, animated: true, completion:nil)
+//    }
+    
+    
+    func goToShowMe() {
+//        let vc = TexturedFace.loadViewController(withStoryBoard: "Main")
+//        navigationController?.navigationBar.isHidden = false
+//        navigationController?.pushViewController(vc, animated: true)
+//
+       
+        
         
         let alertController = UIAlertController(
                                     title: "Choose Camera",
@@ -117,14 +176,22 @@ class HomeScreenViewController: UIViewController {
                 
                 let childVC =  TexturedFace.loadViewController(withStoryBoard: "Main")
                 self.navigationController?.pushViewController(childVC, animated: true)
-                          
+                
             }
 
             // Handling Cancel action
             let cancelAction = UIAlertAction(title: "Back", style: .default) { (action:UIAlertAction!) in
+                DispatchQueue.main.async {
+                    if let presenter = self.navigationController?.presentedViewController {
+                        presenter.dismiss(animated: true)
+                                        print("isPresented")
+                  
+                                    }
+//                    self.showLoader()
+                }
                 let childVC =  ARCameraBack.loadViewController(withStoryBoard: "Main")
                 self.navigationController?.pushViewController(childVC, animated: true)
-                          
+               
             }
 
             // Adding action buttons to the alert controller
@@ -133,6 +200,20 @@ class HomeScreenViewController: UIViewController {
 
             // Presenting alert controller
             self.present(alertController, animated: true, completion:nil)
+
+    }
+    
+    func removeARHelp() {
+        for v in view.subviews {
+            if v is PopUPView {
+                UIView.animate(withDuration: 0.2, animations: {
+                    v.alpha = 0
+                }) { _ in
+
+                    v.removeFromSuperview()
+                }
+            }
+        }
     }
     
 
@@ -217,8 +298,6 @@ extension HomeScreenViewController: WebRTCClientDelegate {
                 }catch let error as NSError{
                   print("Error:",error.localizedDescription)
                 }
-            
-            
         
     }
     

@@ -436,20 +436,3 @@ class OverlayView: UIImageView {
   }
 }
 
-/// The strokes to be drawn in order to visualize a pose estimation result.
-fileprivate struct Strokes {
-  var dots: [CGPoint]
-  var lines: [Line]
-}
-
-/// A straight line.
-fileprivate struct Line {
-  let from: CGPoint
-  let to: CGPoint
-}
-
-fileprivate enum VisualizationError: Error {
-  case missingBodyPart(of: BodyPart)
-}
-
-

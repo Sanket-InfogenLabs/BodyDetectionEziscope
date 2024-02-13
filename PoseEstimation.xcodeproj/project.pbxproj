@@ -20,6 +20,9 @@
 		0F1854F426A95F48004780E1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1854DE26A95F48004780E1 /* ViewController.swift */; };
 		0F1854F826A95F48004780E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1854E326A95F48004780E1 /* AppDelegate.swift */; };
 		0F1854F926A95F48004780E1 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1854E526A95F48004780E1 /* OverlayView.swift */; };
+		1409A25E2B7502D500E3C29F /* PopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1409A25D2B7502D500E3C29F /* PopUpView.xib */; };
+		1409A2602B750F1C00E3C29F /* PopUPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1409A25F2B750F1C00E3C29F /* PopUPView.swift */; };
+		146525052B75F5A5006943EE /* DetectionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146525042B75F5A5006943EE /* DetectionData.swift */; };
 		146CC52B2B6A19EC009BE7F3 /* BufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146CC52A2B6A19EC009BE7F3 /* BufferExtension.swift */; };
 		146FD52B2B6D0307009483B9 /* TrainingModeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FD52A2B6D0307009483B9 /* TrainingModeController.swift */; };
 		146FD52F2B70B57A009483B9 /* ARCameraBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146FD52E2B70B57A009483B9 /* ARCameraBack.swift */; };
@@ -60,6 +63,9 @@
 		0F1854E326A95F48004780E1 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F1854E526A95F48004780E1 /* OverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		0F1854E626A95F48004780E1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1409A25D2B7502D500E3C29F /* PopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopUpView.xib; sourceTree = "<group>"; };
+		1409A25F2B750F1C00E3C29F /* PopUPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUPView.swift; sourceTree = "<group>"; };
+		146525042B75F5A5006943EE /* DetectionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetectionData.swift; sourceTree = "<group>"; };
 		146CC52A2B6A19EC009BE7F3 /* BufferExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferExtension.swift; sourceTree = "<group>"; };
 		146FD52A2B6D0307009483B9 /* TrainingModeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingModeController.swift; sourceTree = "<group>"; };
 		146FD52E2B70B57A009483B9 /* ARCameraBack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARCameraBack.swift; sourceTree = "<group>"; };
@@ -104,35 +110,37 @@
 			isa = PBXGroup;
 			children = (
 				18BE6C9F2B73BDF70091C621 /* Data */,
-				18BE6C8D2B73BDEA0091C621 /* Services */,
 				0F1854E326A95F48004780E1 /* AppDelegate.swift */,
 				0F1854D726A95F48004780E1 /* Assets.xcassets */,
-				0F1854D026A95F48004780E1 /* Camera */,
-				0F1854E626A95F48004780E1 /* Info.plist */,
+				146525032B75EF3F006943EE /* Model */,
+				0F1854CB26A95F48004780E1 /* View */,
+				0F1854DD26A95F48004780E1 /* Controller */,
+				0F1854D026A95F48004780E1 /* Extensions */,
 				7F0CE7FD26DF6A1600CC7BC7 /* ML */,
-				7F0CE7FC26DF69E500CC7BC7 /* UI */,
+				84B67CEC2326338300A11A08 /* Products */,
+				0F1854E626A95F48004780E1 /* Info.plist */,
 			);
 			path = PoseEstimation;
 			sourceTree = "<group>";
 		};
-		0F1854CB26A95F48004780E1 /* Storyboards */ = {
+		0F1854CB26A95F48004780E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				0F1854CC26A95F48004780E1 /* Main.storyboard */,
 				0F1854CE26A95F48004780E1 /* Launch Screen.storyboard */,
+				1409A25D2B7502D500E3C29F /* PopUpView.xib */,
 			);
-			path = Storyboards;
+			path = View;
 			sourceTree = "<group>";
 		};
-		0F1854D026A95F48004780E1 /* Camera */ = {
+		0F1854D026A95F48004780E1 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				146FD5312B70B7E3009483B9 /* Extension.swift */,
 				0F1854D226A95F48004780E1 /* CameraFeedManager.swift */,
 				146CC52A2B6A19EC009BE7F3 /* BufferExtension.swift */,
-				148837B32B678E0000F23476 /* ARCameraFront.swift */,
-				146FD52E2B70B57A009483B9 /* ARCameraBack.swift */,
 			);
-			path = Camera;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		0F1854D826A95F48004780E1 /* Extensions */ = {
@@ -145,15 +153,19 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		0F1854DD26A95F48004780E1 /* ViewControllers */ = {
+		0F1854DD26A95F48004780E1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				18BE6CAA2B73C9E70091C621 /* LoginViewController.swift */,
-				0F1854DE26A95F48004780E1 /* ViewController.swift */,
-				146FD52A2B6D0307009483B9 /* TrainingModeController.swift */,
+				0F1854E526A95F48004780E1 /* OverlayView.swift */,
 				146FD5352B70E9EF009483B9 /* HomeScreen.swift */,
+				1409A25F2B750F1C00E3C29F /* PopUPView.swift */,
+				18BE6CAA2B73C9E70091C621 /* LoginViewController.swift */,
+				148837B32B678E0000F23476 /* ARCameraFront.swift */,
+				146FD52E2B70B57A009483B9 /* ARCameraBack.swift */,
+				146FD52A2B6D0307009483B9 /* TrainingModeController.swift */,
+				0F1854DE26A95F48004780E1 /* ViewController.swift */,
 			);
-			path = ViewControllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		0F1854DF26A95F48004780E1 /* Models */ = {
@@ -168,20 +180,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0F1854E426A95F48004780E1 /* Views */ = {
+		146525032B75EF3F006943EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0F1854E526A95F48004780E1 /* OverlayView.swift */,
+				18BE6C8D2B73BDEA0091C621 /* Services */,
+				146525042B75F5A5006943EE /* DetectionData.swift */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		146FD5302B70B7A6009483B9 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				146FD5312B70B7E3009483B9 /* Extension.swift */,
-			);
-			path = Extensions;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		18BE6C8D2B73BDEA0091C621 /* Services */ = {
@@ -216,17 +221,6 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		7F0CE7FC26DF69E500CC7BC7 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				0F1854CB26A95F48004780E1 /* Storyboards */,
-				0F1854DD26A95F48004780E1 /* ViewControllers */,
-				0F1854E426A95F48004780E1 /* Views */,
-				146FD5302B70B7A6009483B9 /* Extensions */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
 		7F0CE7FD26DF6A1600CC7BC7 /* ML */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,9 +235,8 @@
 			isa = PBXGroup;
 			children = (
 				0F1854C926A95F48004780E1 /* PoseEstimation */,
-				84B67CEC2326338300A11A08 /* Products */,
-				B4DFDCC28443B641BC36251D /* Pods */,
 				A3DA804B8D3F6891E3A02852 /* Frameworks */,
+				B4DFDCC28443B641BC36251D /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -253,6 +246,7 @@
 				84B67CEB2326338300A11A08 /* PoseEstimation.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A3DA804B8D3F6891E3A02852 /* Frameworks */ = {
@@ -341,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F1854E926A95F48004780E1 /* Launch Screen.storyboard in Resources */,
+				1409A25E2B7502D500E3C29F /* PopUpView.xib in Resources */,
 				0F1854EF26A95F48004780E1 /* Assets.xcassets in Resources */,
 				0F1854E826A95F48004780E1 /* Main.storyboard in Resources */,
 				84FFA7072A93521900585D0F /* movenet_thunder.tflite in Resources */,
@@ -402,9 +397,11 @@
 				0F1854F826A95F48004780E1 /* AppDelegate.swift in Sources */,
 				0F1854EE26A95F48004780E1 /* PoseEstimator.swift in Sources */,
 				0F1854F226A95F48004780E1 /* CVPixelBuffer+TFLite.swift in Sources */,
+				1409A2602B750F1C00E3C29F /* PopUPView.swift in Sources */,
 				18BE6CAB2B73C9E70091C621 /* LoginViewController.swift in Sources */,
 				18BE6C9A2B73BDEA0091C621 /* NativeWebSocket.swift in Sources */,
 				0F1854F026A95F48004780E1 /* CGSize+TFLite.swift in Sources */,
+				146525052B75F5A5006943EE /* DetectionData.swift in Sources */,
 				0F1854F426A95F48004780E1 /* ViewController.swift in Sources */,
 				0F1854EB26A95F48004780E1 /* CameraFeedManager.swift in Sources */,
 				18BE6C972B73BDEA0091C621 /* Message.swift in Sources */,

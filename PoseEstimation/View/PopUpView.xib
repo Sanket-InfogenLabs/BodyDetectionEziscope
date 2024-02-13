@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rasa-Bold.ttf">
+            <string>Rasa-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopUPView" customModule="PoseEstimation" customModuleProvider="target">
+            <connections>
+                <outlet property="ContentView" destination="KOb-gK-19N" id="WNP-T3-CJT"/>
+                <outlet property="backgroundView" destination="J4U-XU-MXG" id="OPV-yv-dRU"/>
+                <outlet property="container" destination="lZa-qp-B8S" id="smL-Jj-5Ct"/>
+                <outlet property="showMebtn" destination="6qT-P9-Lfo" id="hIP-uT-wxb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="lZa-qp-B8S">
+            <rect key="frame" x="0.0" y="0.0" width="316" height="435"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4U-XU-MXG">
+                    <rect key="frame" x="0.0" y="0.0" width="316" height="435"/>
+                    <subviews>
+                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81Z-po-5cd">
+                            <rect key="frame" x="0.0" y="0.0" width="316" height="435"/>
+                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.34999999403953552" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="A9u-2E-8R2">
+                                <rect key="frame" x="0.0" y="0.0" width="316" height="435"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <blurEffect style="systemUltraThinMaterialDark"/>
+                        </visualEffectView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="81Z-po-5cd" firstAttribute="leading" secondItem="J4U-XU-MXG" secondAttribute="leading" id="ASC-rF-HFW"/>
+                        <constraint firstAttribute="bottom" secondItem="81Z-po-5cd" secondAttribute="bottom" id="R3C-nO-nrX"/>
+                        <constraint firstItem="81Z-po-5cd" firstAttribute="top" secondItem="J4U-XU-MXG" secondAttribute="top" id="qZt-nQ-NSt"/>
+                        <constraint firstAttribute="trailing" secondItem="81Z-po-5cd" secondAttribute="trailing" id="rpr-1z-yuh"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KOb-gK-19N">
+                    <rect key="frame" x="-7" y="-82.666666666666686" width="330" height="600.33333333333348"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose Options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIy-WH-PqJ">
+                            <rect key="frame" x="50" y="120" width="230" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" name="Rasa-Bold" family="Rasa" pointSize="24"/>
+                            <color key="textColor" red="0.27450980390000002" green="0.3294117647" blue="0.92549019610000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qT-P9-Lfo">
+                            <rect key="frame" x="50" y="172" width="230" height="35"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Show ME">
+                                <backgroundConfiguration key="background">
+                                    <color key="backgroundColor" red="0.72030168587399512" green="0.46182022764772801" blue="0.16430291178968426" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </backgroundConfiguration>
+                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </buttonConfiguration>
+                            <connections>
+                                <action selector="showMEBthAction:" destination="-1" eventType="touchUpInside" id="U8y-zy-cNU"/>
+                            </connections>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ptp-QU-gQT">
+                            <rect key="frame" x="65" y="238" width="200" height="246"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRm-4p-aQ1">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="ADc-ND-qhD"/>
+                                        <constraint firstAttribute="height" constant="30" id="qnn-MB-h8g"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Enter Email/Phone">
+                                        <backgroundConfiguration key="background">
+                                            <color key="backgroundColor" red="0.20709507199660393" green="0.48337144390732134" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </backgroundConfiguration>
+                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </buttonConfiguration>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ly0-ED-Scv">
+                                    <rect key="frame" x="0.0" y="36" width="200" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="hVo-9g-CMP"/>
+                                        <constraint firstAttribute="width" constant="200" id="ytS-5Y-4CI"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Generate QRCode">
+                                        <backgroundConfiguration key="background">
+                                            <color key="backgroundColor" red="0.20709507199660393" green="0.48337144390732134" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </backgroundConfiguration>
+                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </buttonConfiguration>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtc-Ch-ihX">
+                                    <rect key="frame" x="0.0" y="72" width="200" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="GHe-g2-KFn"/>
+                                        <constraint firstAttribute="height" constant="30" id="lhj-8u-ZFL"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Help/Support">
+                                        <backgroundConfiguration key="background">
+                                            <color key="backgroundColor" red="0.20709507199660393" green="0.48337144390732134" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </backgroundConfiguration>
+                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </buttonConfiguration>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KMW-8y-CnR">
+                                    <rect key="frame" x="0.0" y="107.99999999999997" width="200" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="9U6-kR-OFU"/>
+                                        <constraint firstAttribute="width" constant="200" id="mEv-eq-2cX"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Create Patient Profile">
+                                        <backgroundConfiguration key="background">
+                                            <color key="backgroundColor" red="0.20709507199660393" green="0.48337144390732134" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </backgroundConfiguration>
+                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </buttonConfiguration>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klg-Xa-9LK">
+                                    <rect key="frame" x="0.0" y="143.99999999999997" width="200" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="SdH-Ob-Ihw"/>
+                                        <constraint firstAttribute="width" constant="200" id="pg9-PH-edJ"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Record">
+                                        <backgroundConfiguration key="background">
+                                            <color key="backgroundColor" red="0.20709507199660393" green="0.48337144390732134" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </backgroundConfiguration>
+                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </buttonConfiguration>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzQ-JG-eBa">
+                                    <rect key="frame" x="0.0" y="179.99999999999997" width="200" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="STm-tc-GCW"/>
+                                        <constraint firstAttribute="width" constant="200" id="sdY-QT-Ysq"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Send Data">
+                                        <backgroundConfiguration key="background">
+                                            <color key="backgroundColor" red="0.20709507199660393" green="0.48337144390732134" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </backgroundConfiguration>
+                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </buttonConfiguration>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X05-Gh-XRd">
+                                    <rect key="frame" x="0.0" y="215.99999999999997" width="200" height="30"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="200" id="MVT-tD-M1a"/>
+                                        <constraint firstAttribute="height" constant="30" id="sJP-Vk-Qz3"/>
+                                    </constraints>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Connect External Bluetooth Device ">
+                                        <backgroundConfiguration key="background">
+                                            <color key="backgroundColor" red="0.20709507199660393" green="0.48337144390732134" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </backgroundConfiguration>
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="0.0"/>
+                                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </buttonConfiguration>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="330" id="JAe-b0-6Yh"/>
+                        <constraint firstAttribute="height" constant="600" id="U4v-fq-uau"/>
+                        <constraint firstItem="ptp-QU-gQT" firstAttribute="centerX" secondItem="KOb-gK-19N" secondAttribute="centerX" id="co4-YB-Cxo"/>
+                        <constraint firstAttribute="bottom" secondItem="ptp-QU-gQT" secondAttribute="bottom" constant="116.33" id="rvB-8P-ha7"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="iqf-AJ-Jm4"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="KOb-gK-19N" firstAttribute="centerX" secondItem="lZa-qp-B8S" secondAttribute="centerX" id="HSC-ku-fgY"/>
+                <constraint firstAttribute="bottom" secondItem="J4U-XU-MXG" secondAttribute="bottom" id="JKs-8D-Pvh"/>
+                <constraint firstItem="J4U-XU-MXG" firstAttribute="leading" secondItem="lZa-qp-B8S" secondAttribute="leading" id="MER-aD-sIw"/>
+                <constraint firstItem="KOb-gK-19N" firstAttribute="centerY" secondItem="lZa-qp-B8S" secondAttribute="centerY" id="S7u-0B-sof"/>
+                <constraint firstAttribute="trailing" secondItem="J4U-XU-MXG" secondAttribute="trailing" id="blb-FB-dKX"/>
+                <constraint firstItem="J4U-XU-MXG" firstAttribute="top" secondItem="lZa-qp-B8S" secondAttribute="top" id="hoE-Oz-cZn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-70.229007633587784" y="-127.11267605633803"/>
+        </view>
+    </objects>
+</document>
